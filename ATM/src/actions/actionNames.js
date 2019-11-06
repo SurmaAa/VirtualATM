@@ -1,0 +1,5 @@
+export const ACTION = 'ACTION';
+export const ACTION_REQUEST = 'ACTION_REQUEST';
+
+export const CHANGE_VIEW_REQUEST = 'CHANGE_VIEW_REQUEST';
+export const CHANGE_VIEW = 'CHANGE_VIEW';
