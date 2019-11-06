@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 /*Column Components*/
 export const ButtonsColumn = styled.div`
@@ -16,7 +16,7 @@ export const Button = styled.button`
     width: 4rem;
     height: 4rem;
     border-radius: 1rem;
-    ${props => props.buttonBlocked ? "background-color: #808080;" : null}
+    ${props => props.buttonBlocked ? "background-color: #808080; cursor: not-allowed;" : "cursor: pointer;"}
 `;
 
 export const Display = styled.div`
@@ -78,9 +78,9 @@ export const ViewButtonDescription = styled.div`
 `;
 
 export const ViewColumnWrapper = styled.div`
-        display: flex;
-        width: 100%;
-        height: calc(50% + 1rem);
+    display: flex;
+    width: 100%;
+    height: calc(50% + 1rem);
 `;
 
 export const ViewTextContainer = styled.div`
@@ -88,6 +88,8 @@ export const ViewTextContainer = styled.div`
     display: flex;
     height: calc(50% - 1rem);
     align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
 `;
 
 export const ViewMainText = styled.h1`
@@ -97,4 +99,35 @@ export const ViewMainText = styled.h1`
     color: #07ff53;
     font-size: 4rem;
     letter-spacing: 1rem;
+    margin: 0;
+    text-align: center;
 `;
+
+
+export const ViewSecondaryText = styled.h1`
+    display: flex;
+    justify-content: center;
+    flex-basis: 100%;
+    color: #07ff53;
+    text-align: center;
+    margin: 0;
+    ${props => {
+        if (props.fakeInput) {
+            return `
+            &::after {
+                content: '|';
+                animation: flashing .25s linear infinite;
+                animation-direction: alternate;
+                @keyframes flashing {
+                    from {
+                        opacity: 0;
+                      }
+                    to {
+                    opacity: 1;
+                    }
+                }
+            }`;
+        }
+    }}
+`;
+

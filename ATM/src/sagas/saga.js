@@ -1,18 +1,58 @@
 import { all, fork, call, put, takeLatest, takeEvery, delay } from 'redux-saga/effects';
-import { CHANGE_VIEW_REQUEST, CHANGE_VIEW } from '../actions/actionNames';
-import { changeView } from '../actions/actions';
+import { CHANGE_LANG_REQUEST, SET_MONEY_AMOUNT_REQUEST, DEPOSIT_MONEY_REQUEST, TRANSACTION_MSG_REQUEST } from '../actions/actionNames';
+import { changeLanguage, setMoneyAmount, depositMoney, pushTransactionMsg } from '../actions/actions';
+import isInteger from '../helpers/isInteger';
 
-function* dispatchChangeView(action) {
-    yield put(changeView(action.view));
+function* dispatchChangeLanguage(action) {
+    yield put(changeLanguage(action.language));
+}
+
+function* dispatchMoneyAmount(action) {
+    yield put(setMoneyAmount(action.amount));
+}
+
+function* dispatchDepositMoney() {
+    yield put(depositMoney());
+}
+
+function* dispatchTransactionMsg(msg) {
+    msg = msg instanceof Object ? msg.msg : msg; // Handle string, action object
+    yield put(pushTransactionMsg(msg));
+}
+
+function* validateTransactionValueIsInteger(action) {
+    const isValid = isInteger(action.amount);
+    if (isValid) {
+        yield call(dispatchTransactionMsg, action.language.SUCCESS);
+        yield call(dispatchDepositMoney);
+        return;
+    }
+
+    yield call(dispatchTransactionMsg, action.language.TRANSACTION_FAIL);
 }
 
 /*Observers*/
-function* observeChangeViewRequest() {
-    yield takeEvery(CHANGE_VIEW_REQUEST, dispatchChangeView);
+function* takeEveryObserver() {
+    yield takeEvery(CHANGE_LANG_REQUEST, dispatchChangeLanguage);
+}
+
+function* observeChangeMoneyAmount() {
+    yield takeEvery(SET_MONEY_AMOUNT_REQUEST, dispatchMoneyAmount);
+}
+
+function* observeDepositMoneyRequest() {
+    yield takeEvery(DEPOSIT_MONEY_REQUEST, validateTransactionValueIsInteger);
+}
+
+function* observeTransactionMessageChange() {
+    yield takeEvery(TRANSACTION_MSG_REQUEST, dispatchTransactionMsg); 
 }
 
 export function* RootSaga() {
     yield all([
-        fork(observeChangeViewRequest),
+        fork(takeEveryObserver),
+        fork(observeChangeMoneyAmount),
+        fork(observeDepositMoneyRequest),
+        fork(observeTransactionMessageChange)
     ]);
 };

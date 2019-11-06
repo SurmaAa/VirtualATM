@@ -1,5 +1,12 @@
+import languageEn from '../language/languageEN';
+
 const initialState = {
-    view: "DEFAULT"
+    balance: 2315,
+    transactionMsg: "",
+    transactionMoneyAmount: 0,
+    language: {
+        ...languageEn
+    }
 };
 
 export default initialState;
