@@ -3,8 +3,9 @@ import styled from 'styled-components';
 export const ButtonsColumn = styled.div`
     display: flex;
     flex-flow: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin: 1rem;
+    height: 50%;
 `;
 
 export const Button = styled.button`
@@ -18,7 +19,8 @@ export const Button = styled.button`
 `;
 
 export const Display = styled.div`
-flex-basis: 100%;
-display: flex;
-flex-flow: column;
+    flex-basis: 100%;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
 `;

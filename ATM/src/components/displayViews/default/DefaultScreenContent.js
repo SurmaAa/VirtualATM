@@ -9,13 +9,15 @@ const View = styled.div`
     margin-top: 1rem;
     margin-bottom: 1rem;
     border-radius: 1rem;
+    align-items: flex-end;
 `;
 
 const Column = styled.div`
+    height: calc(50% + 1rem);
     flex: 1;
     display: flex; 
     flex-flow: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     ${props => props.side === "LEFT" ? "padding-right: 0.5rem;" : "padding-left: 0.5rem;"}
 `;
 
