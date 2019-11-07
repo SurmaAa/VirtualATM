@@ -42,6 +42,12 @@ export const Button = styled.button`
         font-size: .65rem;
         height: 2rem;
     }
+    @media (max-height: 800px) {
+        border-radius: .5rem;
+        ${props => props.wide ? "width: 6rem;" : "width: 2rem;"}
+        font-size: .65rem;
+        height: 2rem;
+    }
 `;
 
 export const Display = styled.div`
