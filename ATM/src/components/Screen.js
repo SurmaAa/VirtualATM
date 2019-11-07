@@ -14,6 +14,7 @@ import constants from '../common/constants';
 import { colors } from '../css/cssSimpleTheme';
 
 const ScreenContainer = styled.div`
+    margin-top: 2rem;
     display: flex;
     width: 40vw;
     height: 60vh;
