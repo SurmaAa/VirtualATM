@@ -17,7 +17,7 @@ const ScreenContainer = styled.div`
     margin-top: 2rem;
     display: flex;
     width: 40vw;
-    height: 60vh;
+    height: 30vw;
     background-color: ${colors.CASE};
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
@@ -26,6 +26,16 @@ const ScreenContainer = styled.div`
     align-items: flex-end;
     @media (max-width: 1500px) {
         width: 80vw;
+        height: 50vh;
+    }
+    @media (max-width: 1100px) {
+        height: 50vw;
+    }
+    @media (max-width: 900px) {
+        height: 60vw;
+    }
+    @media (max-width: 900px) {
+        height: 50vh;
     }
     @media (max-width: 700px) {
         width: 95vw;

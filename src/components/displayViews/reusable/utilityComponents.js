@@ -20,6 +20,9 @@ export const Button = styled.button`
     border-radius: 1rem;
     font-weight: bolder;
     font-size: 1rem;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+    justify-content: :center;
+    align-items: center;
     color: ${colors.KEYBOARD};
     ${props => props.bgColor ? `background-color: ${props.bgColor}` : null}
     ${props => props.margin ? "margin: .5rem;" : null}
@@ -27,13 +30,13 @@ export const Button = styled.button`
 
     @media (max-width: 700px) {
         border-radius: .5rem;
-        ${props => props.wide ? "width: 4rem;" : "width: 2rem;"}
+        ${props => props.wide ? "width: 6rem;" : "width: 2rem;"}
         font-size: .75rem;
         height: 2rem;
     }
     @media (max-width: 600px) {
         border-radius: .5rem;
-        ${props => props.wide ? "width: 4rem;" : "width: 2rem;"}
+        ${props => props.wide ? "width: 6rem;" : "width: 2rem;"}
         font-size: .65rem;
         height: 2rem;
     }
