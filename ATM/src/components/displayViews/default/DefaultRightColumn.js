@@ -1,23 +1,19 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { ButtonsColumn, Button } from '../reusable/utilityComponents';
 import { Link } from 'react-router-dom';
+import constants from '../../../common/constants';
 
 class DefaultRightColumn extends React.Component {
     render = () => {
         return (
             <ButtonsColumn>
                 <Button disabled buttonBlocked={true} />
-                <Link to="/language"><Button /></Link>
-                <Link to="/help"><Button /></Link>
+                <Link to={constants.GET_LANGUAGE}><Button /></Link>
+                <Link to={constants.GET_HELP}><Button /></Link>
                 <Button disabled buttonBlocked={true} />
             </ButtonsColumn>
         );
     };
 }
 
-const mapStateToProps = state => ({
-    view: state.paymentsReducer.view
-});
-
-export default connect(mapStateToProps)(DefaultRightColumn);
+export default DefaultRightColumn;

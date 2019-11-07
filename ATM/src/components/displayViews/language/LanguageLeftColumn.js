@@ -17,9 +17,7 @@ class LanguageLeftColumn extends React.Component {
     };
 }
 
-const mapStateToProps = state => ({
-    view: state.paymentsReducer.view
-});
+const mapStateToProps = state => ({});
 
 const mapDispatchToProps = {
     changeLanguageRequest

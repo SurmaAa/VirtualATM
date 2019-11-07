@@ -13,10 +13,10 @@ class DepositRightColumn extends React.Component {
     render = () => {
         return (
             <ButtonsColumn>
-                <Link to={constants.GET_CONFIRM_DEPOSIT}>
+                <Link to={constants.GET_CONFIRM_WITHDRAWAL}>
                     <Button onClick={() => this.props.setMoneyAmountRequest(500)} />
                 </Link>
-                <Link to={constants.GET_CONFIRM_DEPOSIT}>
+                <Link to={constants.GET_CONFIRM_WITHDRAWAL}>
                     <Button onClick={() => this.customAmount()} />
                 </Link>
                 <Button disabled buttonBlocked={true} />

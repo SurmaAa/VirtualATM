@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { depositMoneyRequest, setMoneyAmountRequest, unlockNumericKeysRequest, lockNumericKeysRequest } from '../actions/actions';
+import { depositMoneyRequest, setMoneyAmountRequest, unlockNumericKeysRequest, lockNumericKeysRequest, withdrawMoneyRequest } from '../actions/actions';
 import { Button } from './displayViews/reusable/utilityComponents';
 import history from '../common/history';
+import constants from '../common/constants';
 
 const KeyboardContainer = styled.div`
     display: flex;
@@ -36,22 +37,28 @@ const KeysRow = styled.div`
 
 class Keyboard extends React.Component {
     cancelTransaction = () => {
-        if (window.location.pathname === "/confirm") {
+        if (window.location.pathname.includes(constants.CONFIRM)) {
             this.props.lockNumericKeysRequest();
-            history.push('/');
+            history.push(constants.GET_HOMEPAGE);
         }
     };
 
     confirmTransaction = () => {
-        if (window.location.pathname === "/confirm") {
+        if (window.location.pathname === constants.GET_CONFIRM_DEPOSIT) {
             this.props.depositMoneyRequest(this.props.transactionMoneyAmount, this.props.language);
             this.props.lockNumericKeysRequest();
-            history.push('/balance');
+            history.push(constants.GET_BALANCE);
+        }
+
+        if (window.location.pathname === constants.GET_CONFIRM_WITHDRAWAL) {
+            this.props.withdrawMoneyRequest(this.props.transactionMoneyAmount, this.props.language, this.props.balance);
+            this.props.lockNumericKeysRequest();
+            history.push(constants.GET_BALANCE);
         }
     };
 
     clearInput = () => {
-        if (window.location.pathname === "/confirm" && !this.props.numKeysLocked) {
+        if (window.location.pathname.includes(constants.CONFIRM) && !this.props.numKeysLocked) {
             this.props.setMoneyAmountRequest(0);
         }
     };
@@ -101,17 +108,18 @@ class Keyboard extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    view: state.paymentsReducer.view,
     language: state.paymentsReducer.language,
     transactionMoneyAmount: state.paymentsReducer.transactionMoneyAmount,
-    numKeysLocked: state.paymentsReducer.numKeysLocked
+    numKeysLocked: state.paymentsReducer.numKeysLocked,
+    balance: state.paymentsReducer.balance
 });
 
 const mapDispatchToProps = {
     depositMoneyRequest,
     setMoneyAmountRequest,
     unlockNumericKeysRequest,
-    lockNumericKeysRequest
+    lockNumericKeysRequest,
+    withdrawMoneyRequest
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Keyboard);

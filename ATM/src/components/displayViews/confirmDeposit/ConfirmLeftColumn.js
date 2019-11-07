@@ -14,7 +14,7 @@ class ConfirmLeftColumn extends React.Component {
     render = () => {
         return (
             <ButtonsColumn>
-                <Link to="/balance">
+                <Link to={constants.GET_BALANCE}>
                     <Button onClick={() => this.confirm()} />
                 </Link>
                 <Button disabled buttonBlocked={true} />

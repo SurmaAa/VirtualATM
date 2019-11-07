@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {
     View, ViewTextContainer, ViewMainText, ViewColumn, ViewColumnWrapper, ViewButtonDescription, ViewButtonDescriptionContainer, ViewSecondaryText
 } from '../reusable/utilityComponents';
+import constants from '../../../common/constants';
 
 class HelpScreenContent extends React.Component {
     render = () => {
@@ -15,32 +16,32 @@ class HelpScreenContent extends React.Component {
                     <ViewSecondaryText>{this.props.language.CONTACT_PHONE}</ViewSecondaryText>
                 </ViewTextContainer>
                 <ViewColumnWrapper>
-                    <ViewColumn side="LEFT">
+                    <ViewColumn side={constants.LEFT}>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="LEFT" unsupported={true}></ViewButtonDescription>
+                            <ViewButtonDescription side={constants.LEFT} unsupported={true}></ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="LEFT" unsupported={true}></ViewButtonDescription>
+                            <ViewButtonDescription side={constants.LEFT} unsupported={true}></ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="LEFT" unsupported={true}></ViewButtonDescription>
+                            <ViewButtonDescription side={constants.LEFT} unsupported={true}></ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="LEFT" unsupported={true}></ViewButtonDescription>
+                            <ViewButtonDescription side={constants.LEFT} unsupported={true}></ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                     </ViewColumn>
-                    <ViewColumn side="RIGHT">
+                    <ViewColumn side={constants.RIGHT}>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="RIGHT" unsupported={true}></ViewButtonDescription>
+                            <ViewButtonDescription side={constants.RIGHT} unsupported={true}></ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="RIGHT" unsupported={true}></ViewButtonDescription>
+                            <ViewButtonDescription side={constants.RIGHT} unsupported={true}></ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="RIGHT" unsupported={true}></ViewButtonDescription>
+                            <ViewButtonDescription side={constants.RIGHT} unsupported={true}></ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="RIGHT">{this.props.language.BACK}</ViewButtonDescription>
+                            <ViewButtonDescription side={constants.RIGHT}>{this.props.language.BACK}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                     </ViewColumn>
                 </ViewColumnWrapper>

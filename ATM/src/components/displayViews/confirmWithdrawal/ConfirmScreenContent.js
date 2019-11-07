@@ -5,21 +5,40 @@ import {
 } from '../reusable/utilityComponents';
 import constants from '../../../common/constants';
 
-class LanguageScreenContent extends React.Component {
+class ConfirmScreenContent extends React.Component {
     render = () => {
         return (
             <View>
                 <ViewTextContainer>
-                    <ViewMainText>{this.props.language.LANGUAGE}</ViewMainText>
-                    <ViewSecondaryText>{this.props.language.LANGUAGE_SCREEN_DESC}</ViewSecondaryText>
+                    <ViewMainText>{this.props.language.WITHDRAWAL}</ViewMainText>
+                    {/* Just don't want to create another Component.js for 2 text elements */}
+                    {(() => {
+                        if (this.props.transactionMoneyAmount) {
+                            return (
+                                <>
+                                    <ViewSecondaryText>{this.props.language.CONFIRM_WITHDRAWAL_SCREEN_DESC}</ViewSecondaryText>
+                                    <ViewSecondaryText fakeInput={true}>{(this.props.transactionMoneyAmount).toFixed(2)} {this.props.language.PLN}</ViewSecondaryText>
+                                    <ViewSecondaryText>?</ViewSecondaryText>
+                                </>
+                            );
+                        }
+
+                        return (
+                            <>
+                                <ViewSecondaryText>{this.props.language.PROVIDE_AMOUNT}</ViewSecondaryText>
+                                <ViewSecondaryText fakeInput={true}>{(this.props.transactionMoneyAmount).toFixed(2)} {this.props.language.PLN}</ViewSecondaryText>
+                            </>
+                        );
+                    })()}
+
                 </ViewTextContainer>
                 <ViewColumnWrapper>
                     <ViewColumn side={constants.LEFT}>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side={constants.LEFT}>{this.props.language.ENGLISH}</ViewButtonDescription>
+                            <ViewButtonDescription side={constants.LEFT}>{this.props.language.CONFIRM}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side={constants.LEFT}>{this.props.language.POLISH}</ViewButtonDescription>
+                            <ViewButtonDescription side={constants.LEFT} unsupported={true}></ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
                             <ViewButtonDescription side={constants.LEFT} unsupported={true}></ViewButtonDescription>
@@ -30,7 +49,7 @@ class LanguageScreenContent extends React.Component {
                     </ViewColumn>
                     <ViewColumn side={constants.RIGHT}>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side={constants.RIGHT} unsupported={true}></ViewButtonDescription>
+                            <ViewButtonDescription side={constants.RIGHT}>{this.props.language.CANCEL}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
                             <ViewButtonDescription side={constants.RIGHT} unsupported={true}></ViewButtonDescription>
@@ -49,7 +68,8 @@ class LanguageScreenContent extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    language: state.paymentsReducer.language
+    language: state.paymentsReducer.language,
+    transactionMoneyAmount: state.paymentsReducer.transactionMoneyAmount
 });
 
-export default connect(mapStateToProps)(LanguageScreenContent);
+export default connect(mapStateToProps)(ConfirmScreenContent);

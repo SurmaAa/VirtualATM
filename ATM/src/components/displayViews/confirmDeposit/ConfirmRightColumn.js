@@ -1,19 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setMoneyAmountRequest, lockNumericKeysRequest } from '../../../actions/actions';
+import { lockNumericKeysRequest } from '../../../actions/actions';
 import { ButtonsColumn, Button } from '../reusable/utilityComponents';
 import { Link } from 'react-router-dom';
+import constants from '../../../common/constants';
 
 class ConfirmRightColumn extends React.Component {
     render = () => {
         return (
             <ButtonsColumn>
-                <Link to="/">
+                <Link to={constants.GET_HOMEPAGE}>
                     <Button onClick={() => this.props.lockNumericKeysRequest()} />
                 </Link>
                 <Button disabled buttonBlocked={true} />
                 <Button disabled buttonBlocked={true} />
-                <Link to="/deposit">
+                <Link to={constants.GET_DEPOSIT}>
                     <Button onClick={() => this.props.lockNumericKeysRequest()} />
                 </Link>
             </ButtonsColumn>
@@ -24,7 +25,6 @@ class ConfirmRightColumn extends React.Component {
 const mapStateToProps = state => ({});
 
 const mapDispatchToProps = {
-    setMoneyAmountRequest,
     lockNumericKeysRequest
 };
 

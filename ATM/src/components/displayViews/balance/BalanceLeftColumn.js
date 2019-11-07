@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { ButtonsColumn, Button } from '../reusable/utilityComponents';
 
 class BalanceLeftColumn extends React.Component {
@@ -15,8 +14,4 @@ class BalanceLeftColumn extends React.Component {
     };
 }
 
-const mapStateToProps = state => ({
-    view: state.paymentsReducer.view
-});
-
-export default connect(mapStateToProps)(BalanceLeftColumn);
+export default BalanceLeftColumn;

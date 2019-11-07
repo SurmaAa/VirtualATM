@@ -9,16 +9,16 @@ class DepositLeftColumn extends React.Component {
     render = () => {
         return (
             <ButtonsColumn>
-                <Link to={constants.GET_CONFIRM_DEPOSIT}>
+                <Link to={constants.GET_CONFIRM_WITHDRAWAL}>
                     <Button onClick={() => this.props.setMoneyAmountRequest(20)} />
                 </Link>
-                <Link to={constants.GET_CONFIRM_DEPOSIT}>
+                <Link to={constants.GET_CONFIRM_WITHDRAWAL}>
                     <Button onClick={() => this.props.setMoneyAmountRequest(50)} />
                 </Link>
-                <Link to={constants.GET_CONFIRM_DEPOSIT}>
+                <Link to={constants.GET_CONFIRM_WITHDRAWAL}>
                     <Button onClick={() => this.props.setMoneyAmountRequest(100)} />
                 </Link>
-                <Link to={constants.GET_CONFIRM_DEPOSIT}>
+                <Link to={constants.GET_CONFIRM_WITHDRAWAL}>
                     <Button onClick={() => this.props.setMoneyAmountRequest(200)} />
                 </Link>
             </ButtonsColumn >

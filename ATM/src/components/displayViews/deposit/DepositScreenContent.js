@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {
     View, ViewTextContainer, ViewMainText, ViewColumn, ViewColumnWrapper, ViewButtonDescription, ViewButtonDescriptionContainer, ViewSecondaryText
 } from '../reusable/utilityComponents';
+import constants from '../../../common/constants';
 
 class DepositScreenContent extends React.Component {
     render = () => {
@@ -13,32 +14,32 @@ class DepositScreenContent extends React.Component {
                     <ViewSecondaryText>{this.props.language.DEPOSIT_SCREEN_DESC}</ViewSecondaryText>
                 </ViewTextContainer>
                 <ViewColumnWrapper>
-                    <ViewColumn side="LEFT">
+                    <ViewColumn side={constants.LEFT}>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="LEFT">{this.props.language["20"]}</ViewButtonDescription>
+                            <ViewButtonDescription side={constants.LEFT}>{this.props.language["20"]}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="LEFT">{this.props.language["50"]}</ViewButtonDescription>
+                            <ViewButtonDescription side={constants.LEFT}>{this.props.language["50"]}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="LEFT">{this.props.language["100"]}</ViewButtonDescription>
+                            <ViewButtonDescription side={constants.LEFT}>{this.props.language["100"]}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="LEFT">{this.props.language["200"]}</ViewButtonDescription>
+                            <ViewButtonDescription side={constants.LEFT}>{this.props.language["200"]}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                     </ViewColumn>
-                    <ViewColumn side="RIGHT">
+                    <ViewColumn side={constants.RIGHT}>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="RIGHT">{this.props.language["500"]}</ViewButtonDescription>
+                            <ViewButtonDescription side={constants.RIGHT}>{this.props.language["500"]}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="RIGHT">{this.props.language.CUSTOM_AMOUNT}</ViewButtonDescription>
+                            <ViewButtonDescription side={constants.RIGHT}>{this.props.language.CUSTOM_AMOUNT}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="RIGHT" unsupported={true}></ViewButtonDescription>
+                            <ViewButtonDescription side={constants.RIGHT} unsupported={true}></ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="RIGHT">{this.props.language.BACK}</ViewButtonDescription>
+                            <ViewButtonDescription side={constants.RIGHT}>{this.props.language.BACK}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                     </ViewColumn>
                 </ViewColumnWrapper>
@@ -48,8 +49,7 @@ class DepositScreenContent extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    language: state.paymentsReducer.language,
-    transactionMoneyAmount: state.paymentsReducer.transactionMoneyAmount
+    language: state.paymentsReducer.language
 });
 
 export default connect(mapStateToProps)(DepositScreenContent);

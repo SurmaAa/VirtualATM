@@ -1,5 +1,5 @@
 import {
-    CHANGE_LANG, SET_MONEY_AMOUNT, DEPOSIT_MONEY, TRANSACTION_MSG, LOCK_NUM_KEYS, UNLOCK_NUM_KEYS
+    CHANGE_LANG, SET_MONEY_AMOUNT, DEPOSIT_MONEY, TRANSACTION_MSG, LOCK_NUM_KEYS, UNLOCK_NUM_KEYS, WITHDRAW_MONEY
 } from '../actions/actionNames';
 import constants from '../common/constants';
 import languageEn from '../language/languageEN';
@@ -24,6 +24,11 @@ const paymentsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 balance: state.balance + state.transactionMoneyAmount
+            };
+        case WITHDRAW_MONEY:
+            return {
+                ...state,
+                balance: state.balance - state.transactionMoneyAmount
             };
         case TRANSACTION_MSG:
             return {

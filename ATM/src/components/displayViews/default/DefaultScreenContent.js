@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, ViewTextContainer, ViewMainText, ViewColumn, ViewColumnWrapper, ViewButtonDescription, ViewButtonDescriptionContainer } from '../reusable/utilityComponents';
 import { connect } from 'react-redux';
+import constants from '../../../common/constants';
 
 class DefaultScreenContent extends React.Component {
     render = () => {
@@ -10,31 +11,31 @@ class DefaultScreenContent extends React.Component {
                     <ViewMainText>{this.props.language.ATM}</ViewMainText>
                 </ViewTextContainer>
                 <ViewColumnWrapper>
-                    <ViewColumn side="LEFT">
+                    <ViewColumn side={constants.LEFT}>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="LEFT">{this.props.language.WITHDRAWAL}</ViewButtonDescription>
+                            <ViewButtonDescription side={constants.LEFT}>{this.props.language.WITHDRAWAL}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="LEFT">{this.props.language.DEPOSIT}</ViewButtonDescription>
+                            <ViewButtonDescription side={constants.LEFT}>{this.props.language.DEPOSIT}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="LEFT">{this.props.language.BALANCE}</ViewButtonDescription>
+                            <ViewButtonDescription side={constants.LEFT}>{this.props.language.BALANCE}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="LEFT" unsupported={true}>{this.props.language.BLIK_TRANSACTION}</ViewButtonDescription>
+                            <ViewButtonDescription side={constants.LEFT} unsupported={true}>{this.props.language.BLIK_TRANSACTION}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                     </ViewColumn>
-                    <ViewColumn side="RIGHT">
+                    <ViewColumn side={constants.RIGHT}>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="RIGHT" unsupported={true}>{this.props.language.HACK}</ViewButtonDescription>
+                            <ViewButtonDescription side={constants.RIGHT} unsupported={true}>{this.props.language.HACK}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="RIGHT">{this.props.language.LANGUAGE}</ViewButtonDescription>
+                            <ViewButtonDescription side={constants.RIGHT}>{this.props.language.LANGUAGE}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
-                        <ViewButtonDescriptionContainer side="RIGHT">
+                        <ViewButtonDescriptionContainer side={constants.RIGHT}>
                             <ViewButtonDescription>{this.props.language.HELP}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
-                        <ViewButtonDescriptionContainer side="RIGHT">
+                        <ViewButtonDescriptionContainer side={constants.RIGHT}>
                             <ViewButtonDescription unsupported={true}>{this.props.language.BACK}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                     </ViewColumn>

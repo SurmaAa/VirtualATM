@@ -1,6 +1,7 @@
 import {
     CHANGE_LANG_REQUEST, CHANGE_LANG, SET_MONEY_AMOUNT_REQUEST, SET_MONEY_AMOUNT, DEPOSIT_MONEY_REQUEST, DEPOSIT_MONEY,
-    TRANSACTION_MSG, TRANSACTION_MSG_REQUEST, UNLOCK_NUM_KEYS, UNLOCK_NUM_KEYS_REQUEST, LOCK_NUM_KEYS, LOCK_NUM_KEYS_REQUEST
+    TRANSACTION_MSG, TRANSACTION_MSG_REQUEST, UNLOCK_NUM_KEYS, UNLOCK_NUM_KEYS_REQUEST, LOCK_NUM_KEYS, LOCK_NUM_KEYS_REQUEST,
+    WITHDRAW_MONEY_REQUEST, WITHDRAW_MONEY
 } from './actionNames';
 
 const changeLanguageRequest = (language) => {
@@ -28,6 +29,21 @@ const setMoneyAmount = (amount) => {
     return {
         type: SET_MONEY_AMOUNT,
         amount
+    };
+};
+
+const withdrawMoneyRequest = (amount, language, balance) => {
+    return {
+        type: WITHDRAW_MONEY_REQUEST,
+        amount,
+        language,
+        balance
+    };
+};
+
+const withdrawMoney = () => {
+    return {
+        type: WITHDRAW_MONEY
     };
 };
 
@@ -95,5 +111,7 @@ export {
     unlockNumericKeys,
     unlockNumericKeysRequest,
     lockNumericKeysRequest,
-    lockNumericKeys
+    lockNumericKeys,
+    withdrawMoneyRequest,
+    withdrawMoney
 }

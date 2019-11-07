@@ -1,19 +1,19 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { ButtonsColumn, Button } from '../reusable/utilityComponents';
 import { Link } from 'react-router-dom';
+import constants from '../../../common/constants';
 
 class DefaultLeftColumn extends React.Component {
     render = () => {
         return (
             <ButtonsColumn>
-                <Link to="/withdrawal">
+                <Link to={constants.GET_WITHDRAWAL}>
                     <Button />
                 </Link>
-                <Link to="/deposit">
+                <Link to={constants.GET_DEPOSIT}>
                     <Button />
                 </Link>
-                <Link to="/balance">
+                <Link to={constants.GET_BALANCE}>
                     <Button />
                 </Link>
                 <Button disabled buttonBlocked={true} />
@@ -22,8 +22,4 @@ class DefaultLeftColumn extends React.Component {
     };
 }
 
-const mapStateToProps = state => ({
-    view: state.paymentsReducer.view
-});
-
-export default connect(mapStateToProps)(DefaultLeftColumn);
+export default DefaultLeftColumn;

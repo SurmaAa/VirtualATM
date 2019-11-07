@@ -1,15 +1,16 @@
 import React from 'react';
 import { Router, Switch, Route } from "react-router-dom";
 import styled from 'styled-components';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import DefaultScreen from './displayViews/default/DefaultScreen';
 import BalanceScreen from './displayViews/balance/BalanceScreen';
 import HelpScreen from './displayViews/help/HelpScreen';
 import LanguageScreen from './displayViews/language/LanguageScreen';
 import DepositScreen from './displayViews/deposit/DepositScreen';
-import ConfirmScreen from './displayViews/confirm/ConfirmScreen';
+import WithdrawalScreen from './displayViews/withdrawal/WithdrawalScreen';
+import ConfirmDepositScreen from './displayViews/confirmDeposit/ConfirmScreen';
+import ConfirmWithdrawalScreen from './displayViews/confirmWithdrawal/ConfirmScreen';
 import history from '../common/history';
+import constants from '../common/constants';
 
 const ScreenContainer = styled.div`
     display: flex;
@@ -35,14 +36,15 @@ class Screen extends React.Component {
             <ScreenContainer>
                 <Router history={history}>
                     <Switch>
-                        <Route exact path="/" component={DefaultScreen} />
-                        <Route path="/balance" component={BalanceScreen}/>
-                        <Route path="/help" component={HelpScreen}/>
-                        <Route path="/language" component={LanguageScreen}/>
-                        <Route path="/withdrawal" component={LanguageScreen}/>
-                        <Route path="/deposit" component={DepositScreen}/>
-                        <Route path="/confirm" component={ConfirmScreen}/>
-                        <Route component={DefaultScreen} />                 
+                        <Route exact path={constants.GET_HOMEPAGE} component={DefaultScreen} />
+                        <Route path={constants.GET_BALANCE} component={BalanceScreen} />
+                        <Route path={constants.GET_HELP} component={HelpScreen} />
+                        <Route path={constants.GET_LANGUAGE} component={LanguageScreen} />
+                        <Route path={constants.GET_WITHDRAWAL} component={WithdrawalScreen} />
+                        <Route path={constants.GET_DEPOSIT} component={DepositScreen} />
+                        <Route path={constants.GET_CONFIRM_DEPOSIT} component={ConfirmDepositScreen} />
+                        <Route path={constants.GET_CONFIRM_WITHDRAWAL} component={ConfirmWithdrawalScreen} />
+                        <Route component={DefaultScreen} />
                     </Switch>
                 </Router>
             </ScreenContainer>
@@ -50,11 +52,4 @@ class Screen extends React.Component {
     };
 }
 
-const mapStateToProps = state => ({
-    view: state.paymentsReducer.view
-});
-
-const mapDispatchToProps = {
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Screen);
+export default Screen;

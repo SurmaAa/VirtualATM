@@ -1,6 +1,7 @@
 import React from 'react';
 import { ButtonsColumn, Button } from '../reusable/utilityComponents';
 import { Link } from 'react-router-dom';
+import constants from '../../../common/constants';
 
 class HelpRightColumn extends React.Component {
     render = () => {
@@ -9,7 +10,9 @@ class HelpRightColumn extends React.Component {
                 <Button disabled buttonBlocked={true} />
                 <Button disabled buttonBlocked={true} />
                 <Button disabled buttonBlocked={true} />
-                <Link to="/"><Button /></Link>
+                <Link to={constants.GET_HOMEPAGE}>
+                    <Button />
+                </Link>
             </ButtonsColumn>
         );
     };

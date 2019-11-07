@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import constants from '../../../common/constants';
 
 /*Column Components*/
 export const ButtonsColumn = styled.div`
@@ -60,7 +61,7 @@ export const ViewColumn = styled.div`
     display: flex; 
     flex-flow: column;
     justify-content: space-between;
-    ${props => props.side === "LEFT" ? "padding-right: 0.5rem;" : "padding-left: 0.5rem;"}
+    ${props => props.side === constants.LEFT ? "padding-right: 0.5rem;" : "padding-left: 0.5rem;"}
 `;
 
 export const ViewButtonDescriptionContainer = styled.div`
@@ -86,7 +87,7 @@ export const ViewButtonDescription = styled.div`
         :
         `color: #07ff53;
     background-color: #22436869;`}
-    ${props => props.side === "LEFT" ?
+    ${props => props.side === constants.LEFT ?
         `border-top-right-radius: .25rem;
     border-bottom-right-radius: .25rem;`
         :
