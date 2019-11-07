@@ -1,15 +1,14 @@
 import {
-    CHANGE_LANG, SET_MONEY_AMOUNT, DEPOSIT_MONEY, TRANSACTION_MSG
+    CHANGE_LANG, SET_MONEY_AMOUNT, DEPOSIT_MONEY, TRANSACTION_MSG, LOCK_NUM_KEYS, UNLOCK_NUM_KEYS
 } from '../actions/actionNames';
 import constants from '../common/constants';
 import languageEn from '../language/languageEN';
 import languagePl from '../language/languagePL';
 import initialState from '../state/initialState';
-
 const paymentsReducer = (state = initialState, action) => {
     switch (action.type) {
         case CHANGE_LANG:
-            const lang = action.language === constants.LANG_EN ? languageEn : languagePl; 
+            const lang = action.language === constants.LANG_EN ? languageEn : languagePl;
             return {
                 ...state,
                 language: {
@@ -30,6 +29,16 @@ const paymentsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 transactionMsg: action.msg
+            };
+        case LOCK_NUM_KEYS:
+            return {
+                ...state,
+                numKeysLocked: true,
+            };
+        case UNLOCK_NUM_KEYS:
+            return {
+                ...state,
+                numKeysLocked: false,
             };
         default:
             return state;

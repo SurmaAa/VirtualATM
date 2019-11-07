@@ -1,10 +1,19 @@
 import { all, fork, call, put, takeLatest, takeEvery, delay } from 'redux-saga/effects';
-import { CHANGE_LANG_REQUEST, SET_MONEY_AMOUNT_REQUEST, DEPOSIT_MONEY_REQUEST, TRANSACTION_MSG_REQUEST } from '../actions/actionNames';
-import { changeLanguage, setMoneyAmount, depositMoney, pushTransactionMsg } from '../actions/actions';
+import { CHANGE_LANG_REQUEST, SET_MONEY_AMOUNT_REQUEST, DEPOSIT_MONEY_REQUEST, TRANSACTION_MSG_REQUEST, UNLOCK_NUM_KEYS_REQUEST, 
+LOCK_NUM_KEYS_REQUEST } from '../actions/actionNames';
+import { changeLanguage, setMoneyAmount, depositMoney, pushTransactionMsg, unlockNumericKeys, lockNumericKeys } from '../actions/actions';
 import isInteger from '../helpers/isInteger';
 
 function* dispatchChangeLanguage(action) {
     yield put(changeLanguage(action.language));
+}
+
+function* dispatchUnlockNumericKeys() {
+    yield put(unlockNumericKeys());
+}
+
+function* dispatchLockNumericKeys() {
+    yield put(lockNumericKeys());
 }
 
 function* dispatchMoneyAmount(action) {
@@ -54,11 +63,21 @@ function* observeTransactionMessageChange() {
     yield takeEvery(TRANSACTION_MSG_REQUEST, dispatchTransactionMsg); 
 }
 
+function* observeNumKeysUnlock() {
+    yield takeEvery(UNLOCK_NUM_KEYS_REQUEST, dispatchUnlockNumericKeys);
+}
+
+function* observeNumKeysLock() {
+    yield takeEvery(LOCK_NUM_KEYS_REQUEST, dispatchLockNumericKeys);
+}
+
 export function* RootSaga() {
     yield all([
         fork(takeEveryObserver),
         fork(observeChangeMoneyAmount),
         fork(observeDepositMoneyRequest),
-        fork(observeTransactionMessageChange)
+        fork(observeTransactionMessageChange),
+        fork(observeNumKeysLock),
+        fork(observeNumKeysUnlock)
     ]);
 };

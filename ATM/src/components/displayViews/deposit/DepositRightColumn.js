@@ -5,6 +5,10 @@ import { ButtonsColumn, Button } from '../reusable/utilityComponents';
 import { Link } from 'react-router-dom';
 
 class DepositRightColumn extends React.Component {
+    customAmount = () => {
+        this.props.setMoneyAmountRequest(0);
+    };
+
     render = () => {
         return (
             <ButtonsColumn>
@@ -12,7 +16,7 @@ class DepositRightColumn extends React.Component {
                     <Button onClick={() => this.props.setMoneyAmountRequest(500)} />
                 </Link>
                 <Link to="/confirm">
-                    <Button onClick={() => this.props.setMoneyAmountRequest(0)} />
+                    <Button onClick={() => this.customAmount()} />
                 </Link>
                 <Button disabled buttonBlocked={true} />
                 <Link to="/">
@@ -26,7 +30,7 @@ class DepositRightColumn extends React.Component {
 const mapStateToProps = state => ({});
 
 const mapDispatchToProps = {
-    setMoneyAmountRequest
+    setMoneyAmountRequest,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(DepositRightColumn);

@@ -1,4 +1,7 @@
-import { CHANGE_LANG_REQUEST, CHANGE_LANG, SET_MONEY_AMOUNT_REQUEST, SET_MONEY_AMOUNT, DEPOSIT_MONEY_REQUEST, DEPOSIT_MONEY, TRANSACTION_MSG, TRANSACTION_MSG_REQUEST } from './actionNames';
+import {
+    CHANGE_LANG_REQUEST, CHANGE_LANG, SET_MONEY_AMOUNT_REQUEST, SET_MONEY_AMOUNT, DEPOSIT_MONEY_REQUEST, DEPOSIT_MONEY,
+    TRANSACTION_MSG, TRANSACTION_MSG_REQUEST, UNLOCK_NUM_KEYS, UNLOCK_NUM_KEYS_REQUEST, LOCK_NUM_KEYS, LOCK_NUM_KEYS_REQUEST
+} from './actionNames';
 
 const changeLanguageRequest = (language) => {
     return {
@@ -28,7 +31,7 @@ const setMoneyAmount = (amount) => {
     };
 };
 
-const depositMoneyRequest = (amount, language)  => {
+const depositMoneyRequest = (amount, language) => {
     return {
         type: DEPOSIT_MONEY_REQUEST,
         amount,
@@ -36,7 +39,7 @@ const depositMoneyRequest = (amount, language)  => {
     };
 };
 
-const depositMoney = ()  => {
+const depositMoney = () => {
     return {
         type: DEPOSIT_MONEY,
     };
@@ -56,6 +59,30 @@ const pushTransactionMsg = (msg = "") => {
     };
 };
 
+const unlockNumericKeysRequest = () => {
+    return {
+        type: UNLOCK_NUM_KEYS_REQUEST
+    };
+};
+
+const unlockNumericKeys= () => {
+    return {
+        type: UNLOCK_NUM_KEYS
+    }
+};
+
+const lockNumericKeysRequest = () => {
+    return {
+        type: LOCK_NUM_KEYS_REQUEST
+    };
+};
+
+const lockNumericKeys= () => {
+    return {
+        type: LOCK_NUM_KEYS
+    }
+};
+
 export {
     depositMoneyRequest,
     depositMoney,
@@ -65,4 +92,8 @@ export {
     changeLanguage,
     pushTransactionMsgRequest,
     pushTransactionMsg,
+    unlockNumericKeys,
+    unlockNumericKeysRequest,
+    lockNumericKeysRequest,
+    lockNumericKeys
 }
