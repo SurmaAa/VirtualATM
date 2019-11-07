@@ -17,8 +17,11 @@ const KeyboardContainer = styled.div`
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
+    @media (max-width: 1600px) {
+        width: 50vw;
+    }
     @media (max-width: 1500px) {
-        width: 80vw;
+        width: 60vw;
     }
     @media (max-width: 700px) {
         width: 95vw;

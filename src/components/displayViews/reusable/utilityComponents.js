@@ -27,7 +27,9 @@ export const Button = styled.button`
     ${props => props.bgColor ? `background-color: ${props.bgColor}` : null}
     ${props => props.margin ? "margin: .5rem;" : null}
     ${props => props.buttonBlocked ? `background-color: ${colors.DISABLED}; cursor: not-allowed;` : "cursor: pointer;"}
-
+    @media (max-width: 1100px) {
+        font-weight: normal;
+    }
     @media (max-width: 700px) {
         border-radius: .5rem;
         ${props => props.wide ? "width: 6rem;" : "width: 2rem;"}
@@ -96,13 +98,18 @@ export const ViewButtonDescription = styled.div`
         :
         `border-top-left-radius: .25rem;
     border-bottom-left-radius: .25rem;`} 
+    @media (max-width: 1100px) {
+        font-weight: normal;
+    }
     @media (max-width: 600px) {
         font-size: 0.75rem;
         justify-content: flex-start;
+        font-weight: normal;
     }
     @media (max-width: 400px) {
         font-size: .65rem;
         height: 50%;
+        font-weight: normal;
     }
 `;
 
@@ -125,14 +132,18 @@ export const ViewMainText = styled.h1`
     display: flex;
     justify-content: center;
     flex-basis: 100%;
-    color: ${colors.DESCRIPTION_TEXT};
-    font-size: 4rem;
+    color: ${colors.CASE};
+    font-size: 3rem;
     letter-spacing: .75rem;
     margin: 0;
     text-align: center;
     word-break: break-word;
-    @media (max-width: 1000px) {
+    @media (max-width: 1500px) {
         font-size: 2rem;
+        letter-spacing: .5rem;
+    }
+    @media (max-width: 1100px) {
+        font-size: 1.5rem;
         letter-spacing: .5rem;
     }
     @media (max-width: 500px) {
@@ -140,14 +151,17 @@ export const ViewMainText = styled.h1`
     }
 `;
 
-
 export const ViewSecondaryText = styled.h1`
     display: flex;
     justify-content: center;
     flex-basis: 100%;
-    color: ${props => props.overwriteColor ? `${props.overwriteColor};` : `${colors.DESCRIPTION_TEXT};`}
+    color: ${props => props.overwriteColor ? `${props.overwriteColor};` : `${colors.CASE};`}
     text-align: center;
     margin: 0;
+    font-size: 1.3rem;
+    @media (max-width: 1100px) {
+        font-size: 1rem;
+    }
     ${props => {
         if (props.fakeInput) {
             return `
@@ -166,8 +180,5 @@ export const ViewSecondaryText = styled.h1`
             }`;
         }
     }}
-    @media (max-width: 1000px) {
-        font-size: 1rem;
-    }
 `;
 

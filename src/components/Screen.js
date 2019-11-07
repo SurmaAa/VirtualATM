@@ -24,8 +24,12 @@ const ScreenContainer = styled.div`
     margin-left: auto;
     margin-right: auto;
     align-items: flex-end;
+    @media (max-width: 1600px) {
+        width: 50vw;
+        height: 50vh;
+    }
     @media (max-width: 1500px) {
-        width: 80vw;
+        width: 60vw;
         height: 50vh;
     }
     @media (max-width: 1100px) {
