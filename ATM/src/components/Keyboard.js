@@ -59,7 +59,7 @@ class Keyboard extends React.Component {
     };
 
     clearInput = () => {
-        if (window.location.pathname.includes(constants.CONFIRM) && !this.props.numKeysLocked) {
+        if (window.location.pathname.includes(constants.GET_CONFIRM) && !this.props.numKeysLocked) {
             this.props.setMoneyAmountRequest(0);
         }
     };

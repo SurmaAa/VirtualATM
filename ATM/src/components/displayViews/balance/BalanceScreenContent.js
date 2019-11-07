@@ -53,7 +53,7 @@ class BalanceScreenContent extends React.Component {
 
 BalanceScreenContent.propTypes = {
     transactionMsg: PropTypes.string.isRequired,
-    numKeysLocked: PropTypes.bool.isRequired,
+    language: PropTypes.object.isRequired,
     balance: PropTypes.number.isRequired,
 };
 

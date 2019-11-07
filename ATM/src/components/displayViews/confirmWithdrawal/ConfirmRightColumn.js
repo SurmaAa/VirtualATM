@@ -25,7 +25,7 @@ class ConfirmRightColumn extends React.Component {
 
 ConfirmRightColumn.propTypes = {
     lockNumericKeysRequest: PropTypes.func.isRequired,
-    withdrawMoneyRequest: PropTypes.func.isRequired
+    setMoneyAmountRequest: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({});
