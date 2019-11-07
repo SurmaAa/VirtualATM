@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/VirtualATM/precache-manifest.c24d8cd875159074196a73b0b5b413ed.js"
+  "/VirtualATM/precache-manifest.2c7ef391bf50d3e2a312e27ec0f76b50.js"
 );
 
 self.addEventListener('message', (event) => {
