@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import constants from '../../../common/constants';
 import PropTypes from 'prop-types';
 
-class DepositRightColumn extends React.Component {
+class WithdrawalRightColumn extends React.Component {
     customAmount = () => {
         this.props.setMoneyAmountRequest(0);
     };
@@ -29,7 +29,7 @@ class DepositRightColumn extends React.Component {
     };
 }
 
-DepositRightColumn.propTypes = {
+WithdrawalRightColumn.propTypes = {
     setMoneyAmountRequest: PropTypes.func.isRequired,
 };
 
@@ -39,4 +39,4 @@ const mapDispatchToProps = {
     setMoneyAmountRequest,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DepositRightColumn);
+export default connect(mapStateToProps, mapDispatchToProps)(WithdrawalRightColumn);

@@ -4,7 +4,7 @@ import WithdrawalScreenContent from './WithdrawalScreenContent';
 import WithdrawalLeftColumn from './WithdrawalLeftColumn';
 import WithdrawalRightColumn from './WithdrawalRightColumn';
 
-class DepositScreen extends React.Component {
+class WithdrawalScreen extends React.Component {
     render = () => {
         return (
             <>
@@ -18,4 +18,4 @@ class DepositScreen extends React.Component {
     };
 }
 
-export default DepositScreen;
+export default WithdrawalScreen;

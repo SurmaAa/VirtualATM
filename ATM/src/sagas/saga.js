@@ -1,6 +1,8 @@
-import { all, fork, call, put, takeLatest, takeEvery, delay } from 'redux-saga/effects';
-import { CHANGE_LANG_REQUEST, SET_MONEY_AMOUNT_REQUEST, DEPOSIT_MONEY_REQUEST, TRANSACTION_MSG_REQUEST, UNLOCK_NUM_KEYS_REQUEST, 
-LOCK_NUM_KEYS_REQUEST, WITHDRAW_MONEY_REQUEST } from '../actions/actionNames';
+import { all, fork, call, put, takeEvery } from 'redux-saga/effects';
+import {
+    CHANGE_LANG_REQUEST, SET_MONEY_AMOUNT_REQUEST, DEPOSIT_MONEY_REQUEST, TRANSACTION_MSG_REQUEST, UNLOCK_NUM_KEYS_REQUEST,
+    LOCK_NUM_KEYS_REQUEST, WITHDRAW_MONEY_REQUEST
+} from '../actions/actionNames';
 import { changeLanguage, setMoneyAmount, depositMoney, pushTransactionMsg, unlockNumericKeys, lockNumericKeys, withdrawMoney } from '../actions/actions';
 import isInteger from '../helpers/isInteger';
 
@@ -57,7 +59,7 @@ function* validateWithdrawValueIsInteger(action) {
         yield call(dispatchTransactionMsg, action.language.TRANSACTION_FAIL_MINIMAL_AMOUNT);
         return;
     }
-    
+
     if (action.balance < isValid) {
         yield call(dispatchTransactionMsg, action.language.TRANSACTION_FAIL_TOO_FEW_FUNDS);
         return;
@@ -86,7 +88,7 @@ function* observeDepositMoneyRequest() {
 }
 
 function* observeTransactionMessageChange() {
-    yield takeEvery(TRANSACTION_MSG_REQUEST, dispatchTransactionMsg); 
+    yield takeEvery(TRANSACTION_MSG_REQUEST, dispatchTransactionMsg);
 }
 
 function* observeNumKeysUnlock() {

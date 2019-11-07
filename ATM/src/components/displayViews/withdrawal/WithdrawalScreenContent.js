@@ -5,9 +5,8 @@ import {
 } from '../reusable/utilityComponents';
 import constants from '../../../common/constants';
 import PropTypes from 'prop-types';
-import DepositScreen from '../deposit/DepositScreen';
 
-class DepositScreenContent extends React.Component {
+class WithdrawalScreenContent extends React.Component {
     render = () => {
         return (
             <View>
@@ -50,7 +49,7 @@ class DepositScreenContent extends React.Component {
     };
 }
 
-DepositScreenContent.propTypes = {
+WithdrawalScreenContent.propTypes = {
     language: PropTypes.object.isRequired,
 };
 
@@ -58,4 +57,4 @@ const mapStateToProps = state => ({
     language: state.paymentsReducer.language,
 });
 
-export default connect(mapStateToProps)(DepositScreenContent);
+export default connect(mapStateToProps)(WithdrawalScreenContent);
