@@ -38,7 +38,7 @@ const KeysRow = styled.div`
 
 class Keyboard extends React.Component {
     cancelTransaction = () => {
-        if (window.location.pathname.includes(constants.CONFIRM)) {
+        if (window.location.pathname.includes(constants.GET_CONFIRM)) {
             this.props.lockNumericKeysRequest();
             history.push(constants.GET_HOMEPAGE);
         }
