@@ -127,7 +127,7 @@ export const ViewMainText = styled.h1`
     flex-basis: 100%;
     color: ${colors.DESCRIPTION_TEXT};
     font-size: 4rem;
-    letter-spacing: 1rem;
+    letter-spacing: .75rem;
     margin: 0;
     text-align: center;
     word-break: break-word;
