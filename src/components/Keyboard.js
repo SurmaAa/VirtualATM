@@ -10,22 +10,14 @@ import { colors } from '../css/cssSimpleTheme';
 
 const KeyboardContainer = styled.div`
     display: flex;
-    width: 40vw;
+    width: 100%;
     background-color: ${colors.CASE};
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
-    @media (max-width: 1600px) {
-        width: 50vw;
-    }
-    @media (max-width: 1500px) {
-        width: 60vw;
-    }
-    @media (max-width: 700px) {
-        width: 95vw;
-    }
+    flex: 1;
 `;
 const Keys = styled.div`
     background-color: ${colors.KEYBOARD};
@@ -33,6 +25,7 @@ const Keys = styled.div`
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding: 0.5rem;
+    display: inline-table;
 `;
 
 const KeysRow = styled.div`

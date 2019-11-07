@@ -14,37 +14,15 @@ import constants from '../common/constants';
 import { colors } from '../css/cssSimpleTheme';
 
 const ScreenContainer = styled.div`
-    margin-top: 2rem;
+    width: 100%;
     display: flex;
-    width: 40vw;
-    height: 30vw;
+    flex: 2;
     background-color: ${colors.CASE};
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     margin-left: auto;
     margin-right: auto;
     align-items: flex-end;
-    @media (max-width: 1600px) {
-        width: 50vw;
-        height: 70vh;
-    }
-    @media (max-width: 1500px) {
-        width: 60vw;
-        height: 70vh;
-    }
-    @media (max-width: 1100px) {
-        height: 70vh;
-    }
-    @media (max-width: 900px) {
-        height: 70vh;
-    }
-    @media (max-width: 900px) {
-        height: 70vh;
-    }
-    @media (max-width: 700px) {
-        height: 70vh;
-        width: 95vw;
-    }
 `;
 
 class Screen extends React.Component {

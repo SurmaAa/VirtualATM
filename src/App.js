@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import reducer from './reducers/reducers';
 import Screen from './components/Screen';
 import KeyBoard from './components/Keyboard';
+import ATM from './components/ATM';
 import './css/fontawesome/css/all.min.css';
 import './css/App.css';
 
@@ -18,8 +19,10 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Screen />
-        <KeyBoard />
+        <ATM>
+          <Screen />
+          <KeyBoard />
+        </ATM>
       </Provider>
     );
   }
