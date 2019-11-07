@@ -2,6 +2,7 @@ import React from 'react';
 import { View, ViewTextContainer, ViewMainText, ViewColumn, ViewColumnWrapper, ViewButtonDescription, ViewButtonDescriptionContainer } from '../reusable/utilityComponents';
 import { connect } from 'react-redux';
 import constants from '../../../common/constants';
+import PropTypes from 'prop-types';
 
 class DefaultScreenContent extends React.Component {
     render = () => {
@@ -44,6 +45,10 @@ class DefaultScreenContent extends React.Component {
         );
     };
 }
+
+DefaultScreenContent.propTypes = {
+    language: PropTypes.object.isRequired,
+};
 
 const mapStateToProps = state => ({
     language: state.paymentsReducer.language

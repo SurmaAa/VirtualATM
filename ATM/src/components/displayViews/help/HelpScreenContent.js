@@ -4,6 +4,7 @@ import {
     View, ViewTextContainer, ViewMainText, ViewColumn, ViewColumnWrapper, ViewButtonDescription, ViewButtonDescriptionContainer, ViewSecondaryText
 } from '../reusable/utilityComponents';
 import constants from '../../../common/constants';
+import PropTypes from 'prop-types';
 
 class HelpScreenContent extends React.Component {
     render = () => {
@@ -49,6 +50,10 @@ class HelpScreenContent extends React.Component {
         );
     };
 }
+
+HelpScreenContent.propTypes = {
+    language: PropTypes.object.isRequired,
+};
 
 const mapStateToProps = state => ({
     language: state.paymentsReducer.language

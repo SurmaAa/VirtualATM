@@ -4,6 +4,7 @@ import { withdrawMoneyRequest, lockNumericKeysRequest } from '../../../actions/a
 import { Link } from 'react-router-dom';
 import { ButtonsColumn, Button } from '../reusable/utilityComponents';
 import constants from '../../../common/constants';
+import PropTypes from 'prop-types';
 
 class ConfirmLeftColumn extends React.Component {
     confirm = () => {
@@ -24,6 +25,14 @@ class ConfirmLeftColumn extends React.Component {
         );
     };
 }
+
+ConfirmLeftColumn.propTypes = {
+    language: PropTypes.object.isRequired,
+    transactionMoneyAmount: PropTypes.number.isRequired,
+    balance: PropTypes.number.isRequired,
+    lockNumericKeysRequest: PropTypes.func.isRequired,
+    withdrawMoneyRequest: PropTypes.func.isRequired
+};
 
 const mapStateToProps = state => ({
     transactionMoneyAmount: state.paymentsReducer.transactionMoneyAmount,

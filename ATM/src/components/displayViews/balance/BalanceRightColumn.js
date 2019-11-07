@@ -4,6 +4,7 @@ import { ButtonsColumn, Button } from '../reusable/utilityComponents';
 import { Link } from 'react-router-dom';
 import { pushTransactionMsgRequest } from '../../../actions/actions';
 import constants from '../../../common/constants';
+import PropTypes from 'prop-types';
 
 class BalanceRightColumn extends React.Component {
     render = () => {
@@ -19,6 +20,10 @@ class BalanceRightColumn extends React.Component {
         );
     };
 }
+
+BalanceRightColumn.propTypes = {
+    pushTransactionMsgRequest: PropTypes.func.isRequired
+};
 
 const mapStateToProps = state => ({});
 

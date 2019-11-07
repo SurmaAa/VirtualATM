@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { changeLanguageRequest } from '../../../actions/actions';
 import { ButtonsColumn, Button } from '../reusable/utilityComponents';
 import constants from '../../../common/constants';
+import PropTypes from 'prop-types';
 
 class LanguageLeftColumn extends React.Component {
     render = () => {
@@ -16,6 +17,10 @@ class LanguageLeftColumn extends React.Component {
         );
     };
 }
+
+LanguageLeftColumn.propTypes = {
+    changeLanguageRequest: PropTypes.func.isRequired
+};
 
 const mapStateToProps = state => ({});
 

@@ -4,6 +4,7 @@ import {
     View, ViewTextContainer, ViewMainText, ViewColumn, ViewColumnWrapper, ViewButtonDescription, ViewButtonDescriptionContainer, ViewSecondaryText
 } from '../reusable/utilityComponents';
 import constants from '../../../common/constants';
+import PropTypes from 'prop-types';
 
 class ConfirmScreenContent extends React.Component {
     render = () => {
@@ -66,6 +67,11 @@ class ConfirmScreenContent extends React.Component {
         );
     };
 }
+
+ConfirmScreenContent.propTypes = {
+    language: PropTypes.object.isRequired,
+    transactionMoneyAmount: PropTypes.number.isRequired,
+};
 
 const mapStateToProps = state => ({
     language: state.paymentsReducer.language,

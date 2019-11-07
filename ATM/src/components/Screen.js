@@ -11,12 +11,13 @@ import ConfirmDepositScreen from './displayViews/confirmDeposit/ConfirmScreen';
 import ConfirmWithdrawalScreen from './displayViews/confirmWithdrawal/ConfirmScreen';
 import history from '../common/history';
 import constants from '../common/constants';
+import { colors } from '../css/cssSimpleTheme';
 
 const ScreenContainer = styled.div`
     display: flex;
     width: 40vw;
     height: 60vh;
-    background-color: #224369;
+    background-color: ${colors.CASE};
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     margin-left: auto;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import constants from '../../../common/constants';
+import { colors } from '../../../css/cssSimpleTheme';
 
 /*Column Components*/
 export const ButtonsColumn = styled.div`
@@ -19,9 +20,10 @@ export const Button = styled.button`
     border-radius: 1rem;
     font-weight: bolder;
     font-size: 1rem;
+    color: ${colors.KEYBOARD};
     ${props => props.bgColor ? `background-color: ${props.bgColor}` : null}
     ${props => props.margin ? "margin: .5rem;" : null}
-    ${props => props.buttonBlocked ? "background-color: #808080; cursor: not-allowed;" : "cursor: pointer;"}
+    ${props => props.buttonBlocked ? `background-color: ${colors.DISABLED}; cursor: not-allowed;` : "cursor: pointer;"}
 
     @media (max-width: 700px) {
         border-radius: .5rem;
@@ -49,7 +51,7 @@ export const View = styled.div`
     flex-wrap: wrap;
     width: 100%;
     height: 100%;
-    background-color: #2fa9b3;
+    background-color: ${colors.SCREEN};
     margin-top: 1rem;
     border-radius: 1rem;
     display: flex;
@@ -72,9 +74,9 @@ export const ViewButtonDescriptionContainer = styled.div`
 `;
 
 export const ViewButtonDescription = styled.div`
-    color: black;
+    color: ${colors.DESCRIPTION_TEXT};
     padding: 1.3rem;
-    background-color: #22436869;
+    background-color: ${colors.DESCRIPTION};
     width: 100%;
     height: 40%;
     display: flex;
@@ -82,11 +84,9 @@ export const ViewButtonDescription = styled.div`
     align-items: center;
     font-weight: bolder;
     ${props => props.unsupported ?
-        `color: #808080;
-    background-color: #dddddd;`
-        :
-        `color: #07ff53;
-    background-color: #22436869;`}
+        `color: ${colors.DISABLED};
+    background-color: ${colors.DISABLED_BG};`
+        : null}
     ${props => props.side === constants.LEFT ?
         `border-top-right-radius: .25rem;
     border-bottom-right-radius: .25rem;`
@@ -122,7 +122,7 @@ export const ViewMainText = styled.h1`
     display: flex;
     justify-content: center;
     flex-basis: 100%;
-    color: #07ff53;
+    color: ${colors.DESCRIPTION_TEXT};
     font-size: 4rem;
     letter-spacing: 1rem;
     margin: 0;
@@ -142,7 +142,7 @@ export const ViewSecondaryText = styled.h1`
     display: flex;
     justify-content: center;
     flex-basis: 100%;
-    color: #07ff53;
+    color: ${props => props.overwriteColor ? `${props.overwriteColor};` : `${colors.DESCRIPTION_TEXT};`}
     text-align: center;
     margin: 0;
     ${props => {

@@ -4,6 +4,8 @@ import {
     View, ViewTextContainer, ViewMainText, ViewColumn, ViewColumnWrapper, ViewButtonDescription, ViewButtonDescriptionContainer, ViewSecondaryText
 } from '../reusable/utilityComponents';
 import constants from '../../../common/constants';
+import { colors } from '../../../css/cssSimpleTheme';
+import PropTypes from 'prop-types';
 
 class BalanceScreenContent extends React.Component {
     render = () => {
@@ -11,7 +13,7 @@ class BalanceScreenContent extends React.Component {
             <View>
                 <ViewTextContainer>
                     <ViewMainText>{this.props.language.BALANCE}</ViewMainText>
-                    {this.props.transactionMsg ? <ViewSecondaryText>{this.props.transactionMsg}</ViewSecondaryText> : null}
+                    {this.props.transactionMsg ? <ViewSecondaryText overwriteColor={colors.BUTTON_CLEAR}>{this.props.transactionMsg}</ViewSecondaryText> : null}
                     <ViewSecondaryText>{this.props.language.BALANCE_SCREEN_DESC}{(this.props.balance).toFixed(2)}{constants.SPACE + this.props.language.PLN}</ViewSecondaryText>
                 </ViewTextContainer>
                 <ViewColumnWrapper>
@@ -48,6 +50,12 @@ class BalanceScreenContent extends React.Component {
         );
     };
 }
+
+BalanceScreenContent.propTypes = {
+    transactionMsg: PropTypes.string.isRequired,
+    numKeysLocked: PropTypes.bool.isRequired,
+    balance: PropTypes.number.isRequired,
+};
 
 const mapStateToProps = state => ({
     balance: state.paymentsReducer.balance,

@@ -4,6 +4,8 @@ import {
     View, ViewTextContainer, ViewMainText, ViewColumn, ViewColumnWrapper, ViewButtonDescription, ViewButtonDescriptionContainer, ViewSecondaryText
 } from '../reusable/utilityComponents';
 import constants from '../../../common/constants';
+import PropTypes from 'prop-types';
+import DepositScreen from '../deposit/DepositScreen';
 
 class DepositScreenContent extends React.Component {
     render = () => {
@@ -47,6 +49,10 @@ class DepositScreenContent extends React.Component {
         );
     };
 }
+
+DepositScreenContent.propTypes = {
+    language: PropTypes.object.isRequired,
+};
 
 const mapStateToProps = state => ({
     language: state.paymentsReducer.language,

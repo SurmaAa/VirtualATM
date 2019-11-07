@@ -4,6 +4,7 @@ import { setMoneyAmountRequest, lockNumericKeysRequest } from '../../../actions/
 import { ButtonsColumn, Button } from '../reusable/utilityComponents';
 import { Link } from 'react-router-dom';
 import constants from '../../../common/constants';
+import PropTypes from 'prop-types';
 
 class ConfirmRightColumn extends React.Component {
     render = () => {
@@ -21,6 +22,11 @@ class ConfirmRightColumn extends React.Component {
         );
     };
 }
+
+ConfirmRightColumn.propTypes = {
+    lockNumericKeysRequest: PropTypes.func.isRequired,
+    withdrawMoneyRequest: PropTypes.func.isRequired
+};
 
 const mapStateToProps = state => ({});
 

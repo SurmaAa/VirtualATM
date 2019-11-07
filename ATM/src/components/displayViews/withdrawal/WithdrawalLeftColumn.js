@@ -4,6 +4,7 @@ import { setMoneyAmountRequest } from '../../../actions/actions';
 import { ButtonsColumn, Button } from '../reusable/utilityComponents';
 import { Link } from 'react-router-dom';
 import constants from '../../../common/constants';
+import PropTypes from 'prop-types';
 
 class DepositLeftColumn extends React.Component {
     render = () => {
@@ -25,6 +26,10 @@ class DepositLeftColumn extends React.Component {
         );
     };
 }
+
+DepositLeftColumn.propTypes = {
+    setMoneyAmountRequest: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = state => ({});
 

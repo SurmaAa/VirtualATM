@@ -6,11 +6,12 @@ import { depositMoneyRequest, setMoneyAmountRequest, unlockNumericKeysRequest, l
 import { Button } from './displayViews/reusable/utilityComponents';
 import history from '../common/history';
 import constants from '../common/constants';
+import { colors } from '../css/cssSimpleTheme';
 
 const KeyboardContainer = styled.div`
     display: flex;
     width: 40vw;
-    background-color: #224369;
+    background-color: ${colors.CASE};
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     margin-left: auto;
@@ -24,7 +25,7 @@ const KeyboardContainer = styled.div`
     }
 `;
 const Keys = styled.div`
-    background-color: #14283e;
+    background-color: ${colors.KEYBOARD};
     border-radius: 1rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -81,19 +82,19 @@ class Keyboard extends React.Component {
                         <Button onClick={() => this.setTransactionMoneyAmount(1)} margin={true}>1</Button>
                         <Button onClick={() => this.setTransactionMoneyAmount(2)} margin={true}>2</Button>
                         <Button onClick={() => this.setTransactionMoneyAmount(3)} margin={true}>3</Button>
-                        <Button onClick={() => this.confirmTransaction()} wide={true} bgColor={"#07ff53;"} margin={true}>{this.props.language.CONFIRM}</Button>
+                        <Button onClick={() => this.confirmTransaction()} wide={true} bgColor={colors.BUTTON_CONFIRM} margin={true}>{this.props.language.CONFIRM}</Button>
                     </KeysRow>
                     <KeysRow>
                         <Button onClick={() => this.setTransactionMoneyAmount(4)} margin={true}>4</Button>
                         <Button onClick={() => this.setTransactionMoneyAmount(5)} margin={true}>5</Button>
                         <Button onClick={() => this.setTransactionMoneyAmount(6)} margin={true}>6</Button>
-                        <Button onClick={() => this.clearInput()} wide={true} bgColor={"#ffeb3b"} margin={true}>{this.props.language.CLEAR}</Button>
+                        <Button onClick={() => this.clearInput()} wide={true} bgColor={colors.BUTTON_CLEAR} margin={true}>{this.props.language.CLEAR}</Button>
                     </KeysRow>
                     <KeysRow>
                         <Button onClick={() => this.setTransactionMoneyAmount(7)} margin={true}>7</Button>
                         <Button onClick={() => this.setTransactionMoneyAmount(8)} margin={true}>8</Button>
                         <Button onClick={() => this.setTransactionMoneyAmount(9)} margin={true}>9</Button>
-                        <Button onClick={() => this.cancelTransaction()} wide={true} bgColor={"#f10b3a"} margin={true}>{this.props.language.CANCEL}</Button>
+                        <Button onClick={() => this.cancelTransaction()} wide={true} bgColor={colors.BUTTON_CANCEL} margin={true}>{this.props.language.CANCEL}</Button>
                     </KeysRow>
                     <KeysRow>
                         <Button onClick={() => this.setTransactionMoneyAmount(0)} margin={true}>0</Button>
@@ -106,6 +107,18 @@ class Keyboard extends React.Component {
         );
     };
 }
+
+Keyboard.propTypes = {
+    language: PropTypes.object.isRequired,
+    transactionMoneyAmount: PropTypes.number.isRequired,
+    numKeysLocked: PropTypes.bool.isRequired,
+    balance: PropTypes.number.isRequired,
+    depositMoneyRequest: PropTypes.func.isRequired,
+    setMoneyAmountRequest: PropTypes.func.isRequired,
+    unlockNumericKeysRequest: PropTypes.func.isRequired,
+    lockNumericKeysRequest: PropTypes.func.isRequired,
+    withdrawMoneyRequest: PropTypes.func.isRequired
+};
 
 const mapStateToProps = state => ({
     language: state.paymentsReducer.language,

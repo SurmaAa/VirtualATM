@@ -14,10 +14,6 @@ const constants = {
     GET_CONFIRM_DEPOSIT: '/confirm-deposit',
     GET_CONFIRM_WITHDRAWAL: '/confirm-withdrawal',
     QUESTION_MARK: '?',
-    
-
-
-
 };
 
 export default constants;
