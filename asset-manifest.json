@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/VirtualATM/static/css/main.71ecaf01.chunk.css",
-    "main.js": "/VirtualATM/static/js/main.1f08559d.chunk.js",
-    "main.js.map": "/VirtualATM/static/js/main.1f08559d.chunk.js.map",
+    "main.css": "/VirtualATM/static/css/main.b9909cd7.chunk.css",
+    "main.js": "/VirtualATM/static/js/main.f1dd4b67.chunk.js",
+    "main.js.map": "/VirtualATM/static/js/main.f1dd4b67.chunk.js.map",
     "runtime-main.js": "/VirtualATM/static/js/runtime-main.3db10576.js",
     "runtime-main.js.map": "/VirtualATM/static/js/runtime-main.3db10576.js.map",
     "static/js/2.9e940e50.chunk.js": "/VirtualATM/static/js/2.9e940e50.chunk.js",
     "static/js/2.9e940e50.chunk.js.map": "/VirtualATM/static/js/2.9e940e50.chunk.js.map",
     "index.html": "/VirtualATM/index.html",
-    "precache-manifest.5b27248457adf0f2d9579181b58c9ce2.js": "/VirtualATM/precache-manifest.5b27248457adf0f2d9579181b58c9ce2.js",
+    "precache-manifest.1134ebdb482021e44867f1be18bf4941.js": "/VirtualATM/precache-manifest.1134ebdb482021e44867f1be18bf4941.js",
     "service-worker.js": "/VirtualATM/service-worker.js",
-    "static/css/main.71ecaf01.chunk.css.map": "/VirtualATM/static/css/main.71ecaf01.chunk.css.map",
+    "static/css/main.b9909cd7.chunk.css.map": "/VirtualATM/static/css/main.b9909cd7.chunk.css.map",
     "static/media/all.min.css": "/VirtualATM/static/media/fa-solid-900.d6d8d5da.woff2"
   },
   "entrypoints": [
     "static/js/runtime-main.3db10576.js",
     "static/js/2.9e940e50.chunk.js",
-    "static/css/main.71ecaf01.chunk.css",
-    "static/js/main.1f08559d.chunk.js"
+    "static/css/main.b9909cd7.chunk.css",
+    "static/js/main.f1dd4b67.chunk.js"
   ]
 }
