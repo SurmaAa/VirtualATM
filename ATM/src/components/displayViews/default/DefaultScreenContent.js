@@ -21,7 +21,7 @@ class DefaultScreenContent extends React.Component {
                             <ViewButtonDescription side="LEFT">{this.props.language.BALANCE}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side="LEFT" unsupported={true}>{this.props.language.BALANCE}</ViewButtonDescription>
+                            <ViewButtonDescription side="LEFT" unsupported={true}>{this.props.language.BLIK_TRANSACTION}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                     </ViewColumn>
                     <ViewColumn side="RIGHT">

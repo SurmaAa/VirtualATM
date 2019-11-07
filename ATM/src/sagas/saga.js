@@ -22,6 +22,12 @@ function* dispatchTransactionMsg(msg) {
 
 function* validateTransactionValueIsInteger(action) {
     const isValid = isInteger(action.amount);
+
+    if (isValid <= 0) {
+        yield call(dispatchTransactionMsg, action.language.TRANSACTION_FAIL_MINIMAL_AMOUNT);
+        return;
+    }
+
     if (isValid) {
         yield call(dispatchTransactionMsg, action.language.SUCCESS);
         yield call(dispatchDepositMoney);

@@ -1,4 +1,4 @@
-import styled, { keyframes, css } from 'styled-components';
+import styled from 'styled-components';
 
 /*Column Components*/
 export const ButtonsColumn = styled.div`
@@ -13,10 +13,27 @@ export const Button = styled.button`
     display: flex;
     align-content: center;
     justify-content: center;
-    width: 4rem;
-    height: 4rem;
+    ${props => props.wide ? "width: 6rem;" : "width: 3rem;"}
+    height: 3rem;
     border-radius: 1rem;
+    font-weight: bolder;
+    font-size: 1rem;
+    ${props => props.bgColor ? `background-color: ${props.bgColor}` : null}
+    ${props => props.margin ? "margin: .5rem;" : null}
     ${props => props.buttonBlocked ? "background-color: #808080; cursor: not-allowed;" : "cursor: pointer;"}
+
+    @media (max-width: 700px) {
+        border-radius: .5rem;
+        ${props => props.wide ? "width: 4rem;" : "width: 2rem;"}
+        font-size: .75rem;
+        height: 2rem;
+    }
+    @media (max-width: 600px) {
+        border-radius: .5rem;
+        ${props => props.wide ? "width: 4rem;" : "width: 2rem;"}
+        font-size: .65rem;
+        height: 2rem;
+    }
 `;
 
 export const Display = styled.div`
@@ -33,9 +50,9 @@ export const View = styled.div`
     height: 100%;
     background-color: #2fa9b3;
     margin-top: 1rem;
-    margin-bottom: 1rem;
     border-radius: 1rem;
     display: flex;
+    overflow: hidden;
 `;
 
 export const ViewColumn = styled.div`
@@ -74,19 +91,27 @@ export const ViewButtonDescription = styled.div`
     border-bottom-right-radius: .25rem;`
         :
         `border-top-left-radius: .25rem;
-    border-bottom-left-radius: .25rem;`}    
+    border-bottom-left-radius: .25rem;`} 
+    @media (max-width: 600px) {
+        font-size: 0.75rem;
+        justify-content: flex-start;
+    }
+    @media (max-width: 400px) {
+        font-size: .65rem;
+        height: 50%;
+    }
 `;
 
 export const ViewColumnWrapper = styled.div`
     display: flex;
     width: 100%;
-    height: calc(50% + 1rem);
+    height: calc(50% + 2rem);
 `;
 
 export const ViewTextContainer = styled.div`
     flex-basis: 100%;
     display: flex;
-    height: calc(50% - 1rem);
+    height: calc(50% - 2.4rem);
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
@@ -101,6 +126,14 @@ export const ViewMainText = styled.h1`
     letter-spacing: 1rem;
     margin: 0;
     text-align: center;
+    word-break: break-word;
+    @media (max-width: 1000px) {
+        font-size: 2rem;
+        letter-spacing: .5rem;
+    }
+    @media (max-width: 500px) {
+        letter-spacing: normal;
+    }
 `;
 
 
@@ -129,5 +162,8 @@ export const ViewSecondaryText = styled.h1`
             }`;
         }
     }}
+    @media (max-width: 1000px) {
+        font-size: 1rem;
+    }
 `;
 

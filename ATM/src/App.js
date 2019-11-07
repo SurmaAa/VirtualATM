@@ -5,6 +5,7 @@ import { RootSaga } from './sagas/saga';
 import React, { Component } from 'react';
 import reducer from './reducers/reducers';
 import Screen from './components/Screen';
+import KeyBoard from './components/Keyboard';
 import './css/fontawesome/css/all.min.css';
 import './css/App.css';
 
@@ -18,6 +19,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Screen />
+        <KeyBoard />
       </Provider>
     );
   }
