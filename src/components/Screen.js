@@ -23,6 +23,7 @@ const ScreenContainer = styled.div`
     margin-left: auto;
     margin-right: auto;
     align-items: flex-end;
+    min-height: 450px;
 `;
 
 class Screen extends React.Component {
