@@ -8,7 +8,7 @@ import Screen from './components/Screen';
 import KeyBoard from './components/Keyboard';
 import ATM from './components/ATM';
 import './css/fontawesome/css/all.min.css';
-import './css/App.css';
+import GlobalStyle from './css/GlobalCss';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(reducer, applyMiddleware(sagaMiddleware));
@@ -19,6 +19,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
+        <GlobalStyle />
         <ATM>
           <Screen />
           <KeyBoard />
