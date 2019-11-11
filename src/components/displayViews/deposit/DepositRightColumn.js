@@ -15,14 +15,14 @@ class DepositRightColumn extends React.Component {
         return (
             <ButtonsColumn>
                 <Link to={constants.GET_CONFIRM_DEPOSIT}>
-                    <Button onClick={() => this.props.setMoneyAmountRequest(500)} />
+                    <Button data-test="button-column-1" onClick={() => this.props.setMoneyAmountRequest(500)} />
                 </Link>
                 <Link to={constants.GET_CONFIRM_DEPOSIT}>
-                    <Button onClick={() => this.customAmount()} />
+                    <Button data-test="button-column-2" onClick={() => this.customAmount()} />
                 </Link>
-                <Button disabled buttonBlocked={true} />
+                <Button data-test="button-column-3" disabled buttonBlocked={true} />
                 <Link to={constants.GET_HOMEPAGE}>
-                    <Button />
+                    <Button data-test="button-column-4" />
                 </Link>
             </ButtonsColumn>
         );

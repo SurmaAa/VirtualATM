@@ -8,15 +8,15 @@ class DefaultLeftColumn extends React.Component {
         return (
             <ButtonsColumn>
                 <Link to={constants.GET_WITHDRAWAL}>
-                    <Button />
+                    <Button data-test="button-column-1" />
                 </Link>
                 <Link to={constants.GET_DEPOSIT}>
-                    <Button />
+                    <Button data-test="button-column-2" />
                 </Link>
                 <Link to={constants.GET_BALANCE}>
-                    <Button />
+                    <Button data-test="button-column-3" />
                 </Link>
-                <Button disabled buttonBlocked={true} />
+                <Button data-test="button-column-4" disabled buttonBlocked={true} />
             </ButtonsColumn >
         );
     };

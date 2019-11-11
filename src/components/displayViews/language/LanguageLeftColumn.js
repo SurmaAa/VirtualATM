@@ -9,10 +9,10 @@ class LanguageLeftColumn extends React.Component {
     render = () => {
         return (
             <ButtonsColumn>
-                <Button onClick={() => this.props.changeLanguageRequest(constants.LANG_EN)}/>
-                <Button onClick={() => this.props.changeLanguageRequest(constants.LANG_PL)}/>
-                <Button disabled buttonBlocked={true} />
-                <Button disabled buttonBlocked={true} />
+                <Button data-test="button-column-1" onClick={() => this.props.changeLanguageRequest(constants.LANG_EN)}/>
+                <Button data-test="button-column-2" onClick={() => this.props.changeLanguageRequest(constants.LANG_PL)}/>
+                <Button data-test="button-column-3" disabled buttonBlocked={true} />
+                <Button data-test="button-column-4" disabled buttonBlocked={true} />
             </ButtonsColumn >
         );
     };

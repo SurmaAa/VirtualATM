@@ -75,26 +75,26 @@ class Keyboard extends React.Component {
             <KeyboardContainer>
                 <Keys>
                     <KeysRow>
-                        <Button onClick={() => this.setTransactionMoneyAmount(1)} margin={true}>1</Button>
-                        <Button onClick={() => this.setTransactionMoneyAmount(2)} margin={true}>2</Button>
-                        <Button onClick={() => this.setTransactionMoneyAmount(3)} margin={true}>3</Button>
-                        <Button onClick={() => this.confirmTransaction()} wide={true} bgColor={colors.BUTTON_CONFIRM} margin={true}>{this.props.language.CONFIRM}</Button>
+                        <Button data-test="button-keyboard-1" onClick={() => this.setTransactionMoneyAmount(1)} margin={true}>1</Button>
+                        <Button data-test="button-keyboard-2" onClick={() => this.setTransactionMoneyAmount(2)} margin={true}>2</Button>
+                        <Button data-test="button-keyboard-3" onClick={() => this.setTransactionMoneyAmount(3)} margin={true}>3</Button>
+                        <Button data-test="button-keyboard-confirm" onClick={() => this.confirmTransaction()} wide={true} bgColor={colors.BUTTON_CONFIRM} margin={true}>{this.props.language.CONFIRM}</Button>
                     </KeysRow>
                     <KeysRow>
-                        <Button onClick={() => this.setTransactionMoneyAmount(4)} margin={true}>4</Button>
-                        <Button onClick={() => this.setTransactionMoneyAmount(5)} margin={true}>5</Button>
-                        <Button onClick={() => this.setTransactionMoneyAmount(6)} margin={true}>6</Button>
-                        <Button onClick={() => this.clearInput()} wide={true} bgColor={colors.BUTTON_CLEAR} margin={true}>{this.props.language.CLEAR}</Button>
+                        <Button data-test="button-keyboard-4" onClick={() => this.setTransactionMoneyAmount(4)} margin={true}>4</Button>
+                        <Button data-test="button-keyboard-5" onClick={() => this.setTransactionMoneyAmount(5)} margin={true}>5</Button>
+                        <Button data-test="button-keyboard-6" onClick={() => this.setTransactionMoneyAmount(6)} margin={true}>6</Button>
+                        <Button data-test="button-keyboard-clear" onClick={() => this.clearInput()} wide={true} bgColor={colors.BUTTON_CLEAR} margin={true}>{this.props.language.CLEAR}</Button>
                     </KeysRow>
                     <KeysRow>
-                        <Button onClick={() => this.setTransactionMoneyAmount(7)} margin={true}>7</Button>
-                        <Button onClick={() => this.setTransactionMoneyAmount(8)} margin={true}>8</Button>
-                        <Button onClick={() => this.setTransactionMoneyAmount(9)} margin={true}>9</Button>
-                        <Button onClick={() => this.cancelTransaction()} wide={true} bgColor={colors.BUTTON_CANCEL} margin={true}>{this.props.language.CANCEL}</Button>
+                        <Button data-test="button-keyboard-7" onClick={() => this.setTransactionMoneyAmount(7)} margin={true}>7</Button>
+                        <Button data-test="button-keyboard-8" onClick={() => this.setTransactionMoneyAmount(8)} margin={true}>8</Button>
+                        <Button data-test="button-keyboard-9" onClick={() => this.setTransactionMoneyAmount(9)} margin={true}>9</Button>
+                        <Button data-test="button-keyboard-cancel" onClick={() => this.cancelTransaction()} wide={true} bgColor={colors.BUTTON_CANCEL} margin={true}>{this.props.language.CANCEL}</Button>
                     </KeysRow>
                     <KeysRow>
                         <Button margin={true}></Button>
-                        <Button onClick={() => this.setTransactionMoneyAmount(0)} margin={true}>0</Button>
+                        <Button data-test="button-keyboard-0" onClick={() => this.setTransactionMoneyAmount(0)} margin={true}>0</Button>
                         <Button margin={true}></Button>
                         <Button wide={true} margin={true}></Button>
                     </KeysRow>

@@ -7,10 +7,14 @@ class DefaultRightColumn extends React.Component {
     render = () => {
         return (
             <ButtonsColumn>
-                <Button disabled buttonBlocked={true} />
-                <Link to={constants.GET_LANGUAGE}><Button /></Link>
-                <Link to={constants.GET_HELP}><Button /></Link>
-                <Button disabled buttonBlocked={true} />
+                <Button data-test="button-column-1" disabled buttonBlocked={true} />
+                <Link to={constants.GET_LANGUAGE}>
+                    <Button data-test="button-column-2" />
+                </Link>
+                <Link to={constants.GET_HELP}>
+                    <Button data-test="button-column-3" />
+                </Link>
+                <Button data-test="button-column-4" disabled buttonBlocked={true} />
             </ButtonsColumn>
         );
     };
