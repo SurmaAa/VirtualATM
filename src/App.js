@@ -7,7 +7,6 @@ import reducer from './reducers/reducers';
 import Screen from './components/Screen';
 import KeyBoard from './components/Keyboard';
 import ATM from './components/ATM';
-import './css/fontawesome/css/all.min.css';
 import GlobalStyle from './css/GlobalCss';
 
 const sagaMiddleware = createSagaMiddleware();
