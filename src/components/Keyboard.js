@@ -93,8 +93,8 @@ class Keyboard extends React.Component {
                         <Button onClick={() => this.cancelTransaction()} wide={true} bgColor={colors.BUTTON_CANCEL} margin={true}>{this.props.language.CANCEL}</Button>
                     </KeysRow>
                     <KeysRow>
-                        <Button onClick={() => this.setTransactionMoneyAmount(0)} margin={true}>0</Button>
                         <Button margin={true}></Button>
+                        <Button onClick={() => this.setTransactionMoneyAmount(0)} margin={true}>0</Button>
                         <Button margin={true}></Button>
                         <Button wide={true} margin={true}></Button>
                     </KeysRow>
