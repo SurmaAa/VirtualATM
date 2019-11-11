@@ -11,16 +11,16 @@ class ConfirmLeftColumn extends React.Component {
         this.props.withdrawMoneyRequest(this.props.transactionMoneyAmount, this.props.language, this.props.balance);
         this.props.lockNumericKeysRequest();
     };
-    
+
     render = () => {
         return (
             <ButtonsColumn>
                 <Link to={constants.GET_BALANCE}>
-                    <Button onClick={() => this.confirm()} />
+                    <Button data-test="button-column" onClick={() => this.confirm()} />
                 </Link>
-                <Button disabled buttonBlocked={true} />
-                <Button disabled buttonBlocked={true} />
-                <Button disabled buttonBlocked={true} />
+                <Button data-test="button-column" disabled buttonBlocked={true} />
+                <Button data-test="button-column" disabled buttonBlocked={true} />
+                <Button data-test="button-column" disabled buttonBlocked={true} />
             </ButtonsColumn >
         );
     };

@@ -11,36 +11,36 @@ class WithdrawalScreenContent extends React.Component {
         return (
             <View>
                 <ViewTextContainer>
-                    <ViewMainText>{this.props.language.WITHDRAWAL}</ViewMainText>
-                    <ViewSecondaryText>{this.props.language.WITHDRAWAL_SCREEN_DESC}</ViewSecondaryText>
+                    <ViewMainText data-test="main-text">{this.props.language.WITHDRAWAL}</ViewMainText>
+                    <ViewSecondaryText data-test="secondary-text">{this.props.language.WITHDRAWAL_SCREEN_DESC}</ViewSecondaryText>
                 </ViewTextContainer>
                 <ViewColumnWrapper>
                     <ViewColumn side={constants.LEFT}>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side={constants.LEFT}>{this.props.language["20"]}</ViewButtonDescription>
+                            <ViewButtonDescription data-test="btn-desc-text" side={constants.LEFT}>{this.props.language["20"]}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side={constants.LEFT}>{this.props.language["50"]}</ViewButtonDescription>
+                            <ViewButtonDescription data-test="btn-desc-text" side={constants.LEFT}>{this.props.language["50"]}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side={constants.LEFT}>{this.props.language["100"]}</ViewButtonDescription>
+                            <ViewButtonDescription data-test="btn-desc-text" side={constants.LEFT}>{this.props.language["100"]}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side={constants.LEFT}>{this.props.language["200"]}</ViewButtonDescription>
+                            <ViewButtonDescription data-test="btn-desc-text" side={constants.LEFT}>{this.props.language["200"]}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                     </ViewColumn>
                     <ViewColumn side={constants.RIGHT}>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side={constants.RIGHT}>{this.props.language["500"]}</ViewButtonDescription>
+                            <ViewButtonDescription data-test="btn-desc-text" side={constants.RIGHT}>{this.props.language["500"]}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side={constants.RIGHT}>{this.props.language.CUSTOM_AMOUNT}</ViewButtonDescription>
+                            <ViewButtonDescription data-test="btn-desc-text" side={constants.RIGHT}>{this.props.language.CUSTOM_AMOUNT}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side={constants.RIGHT} unsupported={true}></ViewButtonDescription>
+                            <ViewButtonDescription data-test="btn-desc-text" side={constants.RIGHT} unsupported={true}></ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side={constants.RIGHT}>{this.props.language.BACK}</ViewButtonDescription>
+                            <ViewButtonDescription data-test="btn-desc-text" side={constants.RIGHT}>{this.props.language.BACK}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                     </ViewColumn>
                 </ViewColumnWrapper>

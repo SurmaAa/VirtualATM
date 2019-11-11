@@ -11,12 +11,12 @@ class ConfirmRightColumn extends React.Component {
         return (
             <ButtonsColumn>
                 <Link to={constants.GET_HOMEPAGE}>
-                    <Button onClick={() => this.props.lockNumericKeysRequest()} />
+                    <Button data-test="button-column" onClick={() => this.props.lockNumericKeysRequest()} />
                 </Link>
-                <Button disabled buttonBlocked={true} />
-                <Button disabled buttonBlocked={true} />
+                <Button data-test="button-column" disabled buttonBlocked={true} />
+                <Button data-test="button-column" disabled buttonBlocked={true} />
                 <Link to={constants.GET_DEPOSIT}>
-                    <Button onClick={() => this.props.lockNumericKeysRequest()} />
+                    <Button data-test="button-column" onClick={() => this.props.lockNumericKeysRequest()} />
                 </Link>
             </ButtonsColumn>
         );

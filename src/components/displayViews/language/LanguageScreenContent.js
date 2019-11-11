@@ -11,36 +11,36 @@ class LanguageScreenContent extends React.Component {
         return (
             <View>
                 <ViewTextContainer>
-                    <ViewMainText>{this.props.language.LANGUAGE}</ViewMainText>
-                    <ViewSecondaryText>{this.props.language.LANGUAGE_SCREEN_DESC}</ViewSecondaryText>
+                    <ViewMainText data-test="main-text">{this.props.language.LANGUAGE}</ViewMainText>
+                    <ViewSecondaryText data-test="secondary-text">{this.props.language.LANGUAGE_SCREEN_DESC}</ViewSecondaryText>
                 </ViewTextContainer>
                 <ViewColumnWrapper>
                     <ViewColumn side={constants.LEFT}>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side={constants.LEFT}>{this.props.language.ENGLISH}</ViewButtonDescription>
+                            <ViewButtonDescription data-test="btn-desc-text" side={constants.LEFT}>{this.props.language.ENGLISH}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side={constants.LEFT}>{this.props.language.POLISH}</ViewButtonDescription>
+                            <ViewButtonDescription data-test="btn-desc-text" side={constants.LEFT}>{this.props.language.POLISH}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side={constants.LEFT} unsupported={true}></ViewButtonDescription>
+                            <ViewButtonDescription data-test="btn-desc-text" side={constants.LEFT} unsupported={true}></ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side={constants.LEFT} unsupported={true}></ViewButtonDescription>
+                            <ViewButtonDescription data-test="btn-desc-text" side={constants.LEFT} unsupported={true}></ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                     </ViewColumn>
                     <ViewColumn side={constants.RIGHT}>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side={constants.RIGHT} unsupported={true}></ViewButtonDescription>
+                            <ViewButtonDescription data-test="btn-desc-text" side={constants.RIGHT} unsupported={true}></ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side={constants.RIGHT} unsupported={true}></ViewButtonDescription>
+                            <ViewButtonDescription data-test="btn-desc-text" side={constants.RIGHT} unsupported={true}></ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side={constants.RIGHT} unsupported={true}></ViewButtonDescription>
+                            <ViewButtonDescription data-test="btn-desc-text" side={constants.RIGHT} unsupported={true}></ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                         <ViewButtonDescriptionContainer>
-                            <ViewButtonDescription side={constants.RIGHT}>{this.props.language.BACK}</ViewButtonDescription>
+                            <ViewButtonDescription data-test="btn-desc-text" side={constants.RIGHT}>{this.props.language.BACK}</ViewButtonDescription>
                         </ViewButtonDescriptionContainer>
                     </ViewColumn>
                 </ViewColumnWrapper>

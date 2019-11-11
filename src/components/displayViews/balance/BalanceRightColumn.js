@@ -10,11 +10,11 @@ class BalanceRightColumn extends React.Component {
     render = () => {
         return (
             <ButtonsColumn>
-                <Button disabled buttonBlocked={true} />
-                <Button disabled buttonBlocked={true} />
-                <Button disabled buttonBlocked={true} />
+                <Button data-test="button-column" disabled buttonBlocked={true} />
+                <Button data-test="button-column" disabled buttonBlocked={true} />
+                <Button data-test="button-column" disabled buttonBlocked={true} />
                 <Link to={constants.GET_HOMEPAGE}>
-                    <Button onClick={() => this.props.pushTransactionMsgRequest()} />
+                    <Button data-test="button-column" onClick={() => this.props.pushTransactionMsgRequest()} />
                 </Link>
             </ButtonsColumn>
         );

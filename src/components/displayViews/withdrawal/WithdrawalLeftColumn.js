@@ -11,16 +11,16 @@ class WithdrawalLeftColumn extends React.Component {
         return (
             <ButtonsColumn>
                 <Link to={constants.GET_CONFIRM_WITHDRAWAL}>
-                    <Button data-test="button-column-1" onClick={() => this.props.setMoneyAmountRequest(20)} />
+                    <Button data-test="button-column" onClick={() => this.props.setMoneyAmountRequest(20)} />
                 </Link>
                 <Link to={constants.GET_CONFIRM_WITHDRAWAL}>
-                    <Button data-test="button-column-2" onClick={() => this.props.setMoneyAmountRequest(50)} />
+                    <Button data-test="button-column" onClick={() => this.props.setMoneyAmountRequest(50)} />
                 </Link>
                 <Link to={constants.GET_CONFIRM_WITHDRAWAL}>
-                    <Button data-test="button-column-3" onClick={() => this.props.setMoneyAmountRequest(100)} />
+                    <Button data-test="button-column" onClick={() => this.props.setMoneyAmountRequest(100)} />
                 </Link>
                 <Link to={constants.GET_CONFIRM_WITHDRAWAL}>
-                    <Button data-test="button-column-4" onClick={() => this.props.setMoneyAmountRequest(200)} />
+                    <Button data-test="button-column" onClick={() => this.props.setMoneyAmountRequest(200)} />
                 </Link>
             </ButtonsColumn >
         );

@@ -5,10 +5,10 @@ class BalanceLeftColumn extends React.Component {
     render = () => {
         return (
             <ButtonsColumn>
-                <Button disabled buttonBlocked={true} />
-                <Button disabled buttonBlocked={true} />
-                <Button disabled buttonBlocked={true} />
-                <Button disabled buttonBlocked={true} />
+                <Button data-test="button-column" disabled buttonBlocked={true} />
+                <Button data-test="button-column" disabled buttonBlocked={true} />
+                <Button data-test="button-column" disabled buttonBlocked={true} />
+                <Button data-test="button-column" disabled buttonBlocked={true} />
             </ButtonsColumn >
         );
     };
