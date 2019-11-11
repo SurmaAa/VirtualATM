@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d30a54b8e42091199c6bc93c6a509354",
+    "revision": "01ff313c021a5eebbee4473ecb79ea8e",
     "url": "/VirtualATM/index.html"
   },
   {
-    "revision": "777b8b74d493014c762b",
-    "url": "/VirtualATM/static/css/main.b9909cd7.chunk.css"
+    "revision": "e3f2268e4d125e472c47",
+    "url": "/VirtualATM/static/css/main.dd9dc9d5.chunk.css"
   },
   {
-    "revision": "67b3bde182787e791fce",
-    "url": "/VirtualATM/static/js/2.9e940e50.chunk.js"
+    "revision": "e54662358f8606fc1615",
+    "url": "/VirtualATM/static/js/2.3b4f514b.chunk.js"
   },
   {
-    "revision": "777b8b74d493014c762b",
-    "url": "/VirtualATM/static/js/main.2eb5e258.chunk.js"
+    "revision": "e3f2268e4d125e472c47",
+    "url": "/VirtualATM/static/js/main.35e51a3c.chunk.js"
   },
   {
     "revision": "8f92963ec8740d88af3e",
